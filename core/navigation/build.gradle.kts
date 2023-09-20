@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.andyliu.attractions.attractions.hw.cathay.core.navigation"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         minSdk = 26
