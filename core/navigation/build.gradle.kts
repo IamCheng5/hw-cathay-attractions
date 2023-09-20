@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.andyliu.attractions.attractions.hw.cathay.core.ui"
+    namespace = "com.andyliu.attractions.attractions.hw.cathay.core.navigation"
     compileSdk = 33
 
     defaultConfig {
@@ -33,17 +33,6 @@ android {
 }
 
 dependencies {
-
-    api(platform(libs.compose.bom))
-    api(libs.compose.ui)
-    api(libs.compose.ui.graphics)
-    api(libs.compose.ui.tooling.preview)
-    api(libs.compose.material3)
-    api(libs.compose.ui.util)
-    debugApi(libs.compose.ui.tooling)
-    debugApi(libs.compose.ui.test.manifest)
-
-    api(libs.coil.compose)
-
-    implementation(libs.koin.compose)
+    api(libs.androidx.nav.ui)
+    api(libs.androidx.nav.fragment)
 }
