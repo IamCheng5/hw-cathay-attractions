@@ -2,7 +2,7 @@ package com.andyliu.attractions.attractions.hw.cathay.data.attractions.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.andyliu.attractions.attractions.hw.cathay.core.model.model.LanguageCode
+import com.andyliu.attractions.attractions.hw.cathay.core.model.LanguageCode
 import com.andyliu.attractions.attractions.hw.cathay.core.network.api.AttractionsApi
 import com.andyliu.attractions.attractions.hw.cathay.core.network.model.NetworkAttraction
 

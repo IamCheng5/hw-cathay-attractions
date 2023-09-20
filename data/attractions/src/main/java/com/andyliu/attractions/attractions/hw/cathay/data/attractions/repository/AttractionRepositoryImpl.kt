@@ -2,8 +2,8 @@ package com.andyliu.attractions.attractions.hw.cathay.data.attractions.repositor
 
 import androidx.paging.PagingData
 import androidx.paging.map
-import com.andyliu.attractions.attractions.hw.cathay.core.model.model.LanguageCode
-import com.andyliu.attractions.attractions.hw.cathay.core.model.model.attraction.Attraction
+import com.andyliu.attractions.attractions.hw.cathay.core.model.LanguageCode
+import com.andyliu.attractions.attractions.hw.cathay.core.model.attraction.Attraction
 import com.andyliu.attractions.attractions.hw.cathay.data.attractions.paging.AttractionPager
 import com.andyliu.attractions.attractions.hw.cathay.data.attractions.utils.ObjectMapping.toAttraction
 import kotlinx.coroutines.flow.Flow

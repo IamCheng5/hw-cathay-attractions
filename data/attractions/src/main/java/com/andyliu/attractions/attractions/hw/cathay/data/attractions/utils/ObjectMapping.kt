@@ -1,10 +1,10 @@
 package com.andyliu.attractions.attractions.hw.cathay.data.attractions.utils
 
-import com.andyliu.attractions.attractions.hw.cathay.core.model.model.attraction.Attraction
-import com.andyliu.attractions.attractions.hw.cathay.core.model.model.attraction.Category
-import com.andyliu.attractions.attractions.hw.cathay.core.model.model.attraction.File
-import com.andyliu.attractions.attractions.hw.cathay.core.model.model.attraction.Image
-import com.andyliu.attractions.attractions.hw.cathay.core.model.model.attraction.Link
+import com.andyliu.attractions.attractions.hw.cathay.core.model.attraction.Attraction
+import com.andyliu.attractions.attractions.hw.cathay.core.model.attraction.Category
+import com.andyliu.attractions.attractions.hw.cathay.core.model.attraction.File
+import com.andyliu.attractions.attractions.hw.cathay.core.model.attraction.Image
+import com.andyliu.attractions.attractions.hw.cathay.core.model.attraction.Link
 import com.andyliu.attractions.attractions.hw.cathay.core.network.model.NetworkAttraction
 import com.andyliu.attractions.attractions.hw.cathay.core.network.model.NetworkCategory
 import com.andyliu.attractions.attractions.hw.cathay.core.network.model.NetworkFile

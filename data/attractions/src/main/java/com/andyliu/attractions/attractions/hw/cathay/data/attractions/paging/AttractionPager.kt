@@ -2,7 +2,7 @@ package com.andyliu.attractions.attractions.hw.cathay.data.attractions.paging
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
-import com.andyliu.attractions.attractions.hw.cathay.core.model.model.LanguageCode
+import com.andyliu.attractions.attractions.hw.cathay.core.model.LanguageCode
 import com.andyliu.attractions.attractions.hw.cathay.core.network.api.AttractionsApi
 
 internal class AttractionPager(
