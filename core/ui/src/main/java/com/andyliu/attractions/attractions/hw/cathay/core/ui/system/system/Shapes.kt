@@ -1,4 +1,4 @@
-package com.andyliu.attractions.attractions.hw.cathay.core.ui.system
+package com.andyliu.attractions.attractions.hw.cathay.core.ui.system.system
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.staticCompositionLocalOf
