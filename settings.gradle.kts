@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "hw-cathay-attractions"
 include(":app")
- 
+include(":core:ui")
