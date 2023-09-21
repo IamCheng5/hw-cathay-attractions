@@ -8,24 +8,16 @@ import com.andyliu.attractions.attractions.hw.cathay.core.network.api.Attraction
 internal class AttractionPager(
     private val attractionsApi: AttractionsApi
 ) {
-    private var languageCode: LanguageCode = LanguageCode.ZhTw
-    private lateinit var attractionsPagingSource: AttractionsPagingSource
 
-    fun changeLanguageCode(languageCode: LanguageCode) {
-        this.languageCode = languageCode
-        attractionsPagingSource.changeLanguageCode()
-
-    }
-
-    fun getPager() = Pager(
+    fun getPager(languageCode: LanguageCode) = Pager(
         config = PagingConfig(
             initialLoadSize = INITIAL_PAGE_SIZE,
             pageSize = PAGE_SIZE,
             enablePlaceholders = false
         ),
         pagingSourceFactory = {
-            attractionsPagingSource = AttractionsPagingSource(attractionsApi, languageCode)
-            attractionsPagingSource
+            AttractionsPagingSource(attractionsApi, languageCode)
+
         }
     )
 

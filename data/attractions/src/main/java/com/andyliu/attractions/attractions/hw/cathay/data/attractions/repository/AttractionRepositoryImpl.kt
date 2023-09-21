@@ -11,15 +11,12 @@ import kotlinx.coroutines.flow.map
 
 internal class AttractionRepositoryImpl(private val attractionPager: AttractionPager) :
     AttractionRepository {
-    override fun getAttractionsPagingData(): Flow<PagingData<Attraction>> =
-        attractionPager.getPager().flow.map { pagingData ->
+    override fun getAttractionsPagingData(languageCode: LanguageCode): Flow<PagingData<Attraction>> =
+        attractionPager.getPager(languageCode).flow.map { pagingData ->
             pagingData.map { entity ->
                 entity.toAttraction()
             }
         }
 
-    override fun changeAttractionsLanguage(languageCode: LanguageCode) {
-        attractionPager.changeLanguageCode(languageCode)
-    }
 
 }

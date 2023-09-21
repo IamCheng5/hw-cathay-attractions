@@ -6,6 +6,5 @@ import com.andyliu.attractions.attractions.hw.cathay.core.model.attraction.Attra
 import kotlinx.coroutines.flow.Flow
 
 interface AttractionRepository {
-    fun getAttractionsPagingData(): Flow<PagingData<Attraction>>
-    fun changeAttractionsLanguage(languageCode: LanguageCode)
+    fun getAttractionsPagingData(languageCode: LanguageCode): Flow<PagingData<Attraction>>
 }
