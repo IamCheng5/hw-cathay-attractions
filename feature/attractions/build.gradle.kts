@@ -45,6 +45,9 @@ dependencies {
     implementation(project(":data:attractions"))
     implementation(project(":core:model"))
 
+    implementation(libs.paging.runtime)
+    implementation(libs.paging.compose)
+
     implementation(libs.koin.compose)
     implementation(libs.koin.android)
 }

@@ -4,15 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.ui.Modifier
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
 import com.andyliu.attractions.attractions.hw.cathay.core.ui.system.AppTheme
-import com.andyliu.attractions.attractions.hw.cathay.core.ui.system.system.AppTheme
+import com.andyliu.attractions.attractions.hw.cathay.feature.attractions.ui.AttractionsScreen
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AttractionsFragment : Fragment() {
@@ -23,14 +20,12 @@ class AttractionsFragment : Fragment() {
     ): View = ComposeView(requireContext()).apply {
         setContent {
             AppTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = AppTheme.colorScheme.primary
-                ) {
-                    Box(Modifier.fillMaxSize()) {
-                        Text(text = "Hello World!")
-                    }
-                }
+                val uiState by attractionsViewModel.attractionsUiStateFlow.collectAsState()
+                AttractionsScreen(
+                    uiState = uiState,
+                    onAttractionClick = {},
+                    onLanguageClick = attractionsViewModel::changeAttractionsLanguage
+                )
             }
         }
     }
