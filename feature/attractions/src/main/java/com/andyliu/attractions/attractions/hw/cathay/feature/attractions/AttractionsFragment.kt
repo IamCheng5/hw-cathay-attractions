@@ -24,7 +24,7 @@ class AttractionsFragment : Fragment() {
                 AttractionsScreen(
                     uiState = uiState,
                     onAttractionClick = {},
-                    onLanguageClick = attractionsViewModel::changeAttractionsLanguage
+                    onLanguageSelect = attractionsViewModel::changeAttractionsLanguage
                 )
             }
         }

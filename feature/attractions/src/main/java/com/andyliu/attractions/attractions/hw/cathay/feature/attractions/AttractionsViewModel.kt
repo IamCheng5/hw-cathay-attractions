@@ -25,8 +25,9 @@ internal class AttractionsViewModelImpl(private val attractionRepository: Attrac
     override val attractionsUiStateFlow = MutableStateFlow(AttractionsUiState("TopBar", attractionRepository.getAttractionsPagingData()))
 
     override fun changeAttractionsLanguage(languageCode: LanguageCode) {
-        attractionRepository.changeAttractionsLanguage(languageCode)
-        attractionsUiStateFlow.value = attractionsUiStateFlow.value.copy(title = "AAA")
+        println("changeAttractionsLanguage $languageCode")
+//        attractionRepository.changeAttractionsLanguage(languageCode)
+//        attractionsUiStateFlow.value = attractionsUiStateFlow.value.copy(title = "AAA")
     }
 
 }

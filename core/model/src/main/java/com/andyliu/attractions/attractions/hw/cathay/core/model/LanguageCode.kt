@@ -10,4 +10,9 @@ sealed class LanguageCode(val value: String,val displayName: String){
     data object Id : LanguageCode("id","Bahasa Indonesia")
     data object Th : LanguageCode("th","ภาษาไทย")
     data object Vi : LanguageCode("vi","Tiếng Việt")
+    companion object{
+        fun getAllLanguageCode():List<LanguageCode>{
+            return listOf(ZhTw,ZhCn,En,Ja,Ko,Es,Id,Th,Vi)
+        }
+    }
 }

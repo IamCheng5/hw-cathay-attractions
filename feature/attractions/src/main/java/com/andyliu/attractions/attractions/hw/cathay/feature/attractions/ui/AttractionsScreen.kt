@@ -10,7 +10,6 @@ import androidx.compose.ui.Modifier
 import androidx.paging.compose.collectAsLazyPagingItems
 import com.andyliu.attractions.attractions.hw.cathay.core.model.LanguageCode
 import com.andyliu.attractions.attractions.hw.cathay.core.model.attraction.Attraction
-import com.andyliu.attractions.attractions.hw.cathay.core.ui.system.component.DraggableComponent
 import com.andyliu.attractions.attractions.hw.cathay.core.ui.system.component.TopBar
 import com.andyliu.attractions.attractions.hw.cathay.core.ui.system.system.AppTheme
 import com.andyliu.attractions.attractions.hw.cathay.feature.attractions.AttractionsUiState
@@ -19,7 +18,7 @@ import com.andyliu.attractions.attractions.hw.cathay.feature.attractions.Attract
 internal fun AttractionsScreen(
     uiState: AttractionsUiState,
     onAttractionClick: (Attraction) -> Unit,
-    onLanguageClick: (LanguageCode) -> Unit,
+    onLanguageSelect: (LanguageCode) -> Unit,
 ) {
     val attractions = uiState.attractionsFlow.collectAsLazyPagingItems()
 
@@ -38,7 +37,9 @@ internal fun AttractionsScreen(
                 onClick = onAttractionClick
             )
         }
-        DraggableLanguageSelector(onClick = {})
+
+        LanguageSelector(onLanguageSelect = onLanguageSelect)
+
     }
 
 }
