@@ -36,12 +36,6 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.androidxComposeCompiler.get()
-    }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -50,15 +44,14 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:network"))
-    implementation(project(":core:model"))
-    implementation(project(":core:ui"))
-    implementation(project(":data:attractions"))
+    implementation(project(":feature:attractions"))
+    implementation(project(":core:navigation"))
 
-    implementation(libs.paging.runtime)
-    implementation(libs.paging.compose)//todo remove
+    implementation(libs.androidx.core)
+    implementation(libs.androidx.lifecycle.runtime)
+    implementation(libs.androidx.activity.compose)
+    implementation(libs.androidx.appcompat)
     implementation(libs.koin.android)
-    implementation(libs.koin.compose)
 
 
 }
