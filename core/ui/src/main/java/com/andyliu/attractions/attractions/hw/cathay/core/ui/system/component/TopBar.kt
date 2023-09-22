@@ -1,7 +1,10 @@
 package com.andyliu.attractions.attractions.hw.cathay.core.ui.system.component
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
@@ -26,13 +29,18 @@ fun TopBar(
         verticalAlignment = Alignment.CenterVertically
     ) {
         if (hasBackButton) {
-            IconButton(onClick = onBackClick) {
+            IconButton(
+                modifier = Modifier.size(40.dp),
+                onClick = onBackClick
+            ) {
                 Icon(
                     painter = painterResource(id = R.drawable.ic_back),
                     tint = AppTheme.colorScheme.icon.back,
                     contentDescription = null
                 )
             }
+        }else{
+            Box(modifier = Modifier.height(40.dp))
         }
 
         Text(
@@ -46,4 +54,4 @@ fun TopBar(
     }
 }
 
-fun Modifier.topBarPadding() = padding(vertical = 16.dp, horizontal = 10.dp)
+fun Modifier.topBarPadding() = padding(vertical = 6.dp, horizontal = 10.dp)

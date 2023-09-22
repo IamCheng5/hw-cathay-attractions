@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.andyliu.attractions.attractions.hw.cathay.core.ui.system.AppTheme
+import com.andyliu.attractions.attractions.hw.cathay.feature.attraction.detail.ui.AttractionDetailScreen
 
 class AttractionDetailFragment : Fragment() {
     private val navArgs: AttractionDetailFragmentArgs by navArgs()
@@ -18,8 +20,13 @@ class AttractionDetailFragment : Fragment() {
     ): View = ComposeView(requireContext()).apply {
         setContent {
             AppTheme {
-                println(navArgs.attraction)
-
+                AttractionDetailScreen(
+                    attraction = navArgs.attraction,
+                    onBackClick = {
+                        findNavController().navigateUp()
+                    },
+                    onUrlClick = {println(it)}
+                )
             }
         }
     }
