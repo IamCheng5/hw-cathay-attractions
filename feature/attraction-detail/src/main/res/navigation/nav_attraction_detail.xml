@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_attraction_detail"
+    app:startDestination="@id/attractionDetailFragment">
+
+    <fragment
+        android:id="@+id/attractionDetailFragment"
+        android:name="com.andyliu.attractions.attractions.hw.cathay.feature.attraction.detail.AttractionDetailFragment"
+        android:label="fragment_attraction_detail" >
+        <argument
+            android:name="attraction"
+            app:argType="com.andyliu.attractions.attractions.hw.cathay.core.model.attraction.Attraction" />
+    </fragment>
+</navigation>

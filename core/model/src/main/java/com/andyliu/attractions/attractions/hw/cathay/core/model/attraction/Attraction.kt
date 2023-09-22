@@ -1,7 +1,9 @@
 package com.andyliu.attractions.attractions.hw.cathay.core.model.attraction
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 import java.time.Instant
-
+@Parcelize
 data class Attraction(
     val id: Int?,
     val name: String?,
@@ -32,4 +34,4 @@ data class Attraction(
     val images: List<Image>?,
     val files: List<File>?,
     val networkLinks: List<Link>?
-)
+): Parcelable

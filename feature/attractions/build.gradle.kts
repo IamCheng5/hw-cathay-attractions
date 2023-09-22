@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    id(libs.plugins.androidx.nav.safeargs.kotlin.get().pluginId)
 }
 
 android {
@@ -44,6 +45,7 @@ dependencies {
     implementation(project(":core:ui"))
     implementation(project(":data:attractions"))
     implementation(project(":core:model"))
+    implementation(project(":feature:attraction-detail"))
 
     implementation(libs.paging.runtime)
     implementation(libs.paging.compose)

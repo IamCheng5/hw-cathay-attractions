@@ -7,5 +7,20 @@
     <fragment
         android:id="@+id/attractionsFragment"
         android:name="com.andyliu.attractions.attractions.hw.cathay.feature.attractions.AttractionsFragment"
-        android:label="fragment_attractions"/>
+        android:label="fragment_attractions">
+        <action
+            android:id="@+id/action_attractionsFragment_to_nav_attraction_detail"
+            app:destination="@id/nav_attraction_detail"
+            app:enterAnim="@anim/fade_in_300"
+            app:exitAnim="@anim/fade_out_300"
+            app:popEnterAnim="@anim/fade_in_300"
+            app:popExitAnim="@anim/fade_out_300" >
+            <argument
+                android:name="attraction"
+                app:argType="com.andyliu.attractions.attractions.hw.cathay.core.model.attraction.Attraction" />
+        </action>
+    </fragment>
+
+
+    <include app:graph="@navigation/nav_attraction_detail" />
 </navigation>

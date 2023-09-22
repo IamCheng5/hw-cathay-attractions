@@ -8,6 +8,7 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.platform.ComposeView
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.andyliu.attractions.attractions.hw.cathay.core.ui.system.AppTheme
 import com.andyliu.attractions.attractions.hw.cathay.feature.attractions.ui.AttractionsScreen
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -23,7 +24,9 @@ class AttractionsFragment : Fragment() {
                 val uiState by attractionsViewModel.attractionsUiStateFlow.collectAsState()
                 AttractionsScreen(
                     uiState = uiState,
-                    onAttractionClick = {},
+                    onAttractionClick = {
+                        findNavController().navigate(AttractionsFragmentDirections.actionAttractionsFragmentToNavAttractionDetail(it))
+                    },
                     onLanguageSelect = attractionsViewModel::changeAttractionsLanguage
                 )
             }
