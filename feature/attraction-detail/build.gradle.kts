@@ -1,11 +1,12 @@
+@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
 }
 
 android {
-    namespace = "com.andyliu.attractions.attractions.hw.cathay.feature.attractions"
-    compileSdk = 34
+    namespace = "com.andyliu.attractions.attractions.hw.cathay.feature.attraction.detail"
+    compileSdk = 33
 
     defaultConfig {
         minSdk = 26
@@ -23,7 +24,6 @@ android {
             )
         }
     }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -40,13 +40,10 @@ android {
 }
 
 dependencies {
+
     implementation(project(":core:navigation"))
     implementation(project(":core:ui"))
-    implementation(project(":data:attractions"))
     implementation(project(":core:model"))
-
-    implementation(libs.paging.runtime)
-    implementation(libs.paging.compose)
 
     implementation(libs.koin.android)
 }

@@ -50,6 +50,4 @@ dependencies {
     debugApi(libs.compose.ui.test.manifest)
 
     api(libs.coil.compose)
-
-    implementation(libs.koin.compose)
 }
