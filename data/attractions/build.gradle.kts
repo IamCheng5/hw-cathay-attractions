@@ -30,6 +30,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    tasks.withType<Test>().configureEach {
+        useJUnitPlatform()
+    }
+
 }
 
 dependencies {
@@ -38,5 +42,12 @@ dependencies {
     implementation(project(":core:model"))
 
     implementation(libs.paging.runtime)
+
     implementation(libs.koin.android)
+
+    testImplementation(libs.paging.testing)
+    testImplementation(libs.kotest.runner)
+    testImplementation(libs.kotest.assertions)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.kotlin.reflect)
 }

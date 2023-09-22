@@ -11,20 +11,20 @@ internal class AttractionsPagingSource(
     private val languageCode: LanguageCode
 ) : PagingSource<Int, NetworkAttraction>() {
 
-    fun changeLanguageCode() {
-        invalidate()
-    }
-
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, NetworkAttraction> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, NetworkAttraction> = try {
         val page = params.key ?: 1
         val attractions = attractionsApi.getAttractions(languageCode, page)
-        return LoadResult.Page(
+
+        LoadResult.Page(
             data = attractions,
             prevKey = if (page == 1) null else page - 1,
             nextKey = if (attractions.isEmpty()) null else page + 1
         )
 
+    } catch (e: Exception) {
+        LoadResult.Error(e)
     }
+
 
     override fun getRefreshKey(state: PagingState<Int, NetworkAttraction>): Int? {
         return null

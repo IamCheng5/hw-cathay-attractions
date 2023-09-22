@@ -37,7 +37,8 @@ internal fun AttractionList(
     modifier: Modifier = Modifier,
     listState: LazyListState = rememberLazyListState(),
     attractionItems: LazyPagingItems<Attraction>,
-    onClick: (Attraction) -> Unit
+    onClick: (Attraction) -> Unit,
+    footer: @Composable (() -> Unit)? = null
 ) {
     LazyColumn(
         modifier = modifier,
@@ -55,6 +56,9 @@ internal fun AttractionList(
                 )
             }
 
+        }
+        item {
+            footer?.invoke()
         }
     }
 }
