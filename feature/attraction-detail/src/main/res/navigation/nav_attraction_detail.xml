@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_attraction_detail"
     app:startDestination="@id/attractionDetailFragment">
 
     <fragment
         android:id="@+id/attractionDetailFragment"
         android:name="com.andyliu.attractions.attractions.hw.cathay.feature.attraction.detail.AttractionDetailFragment"
-        android:label="fragment_attraction_detail" >
+        android:label="fragment_attraction_detail">
         <argument
             android:name="attraction"
             app:argType="com.andyliu.attractions.attractions.hw.cathay.core.model.attraction.Attraction" />
+        <action
+            android:id="@+id/action_attractionDetailFragment_to_attractionWebViewFragment"
+            app:destination="@id/attractionWebViewFragment"
+            app:enterAnim="@anim/fade_in_300"
+            app:exitAnim="@anim/fade_out_300"
+            app:popEnterAnim="@anim/fade_in_300"
+            app:popExitAnim="@anim/fade_out_300">
+            <argument
+                android:name="url"
+                app:argType="string" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/attractionWebViewFragment"
+        android:name="com.andyliu.attractions.attractions.hw.cathay.feature.attraction.detail.webview.AttractionWebViewFragment"
+        android:label="fragment_attraction_web_view"
+        tools:layout="@layout/fragment_attraction_web_view">
+        <argument
+            android:name="url"
+            app:argType="string" />
     </fragment>
 </navigation>

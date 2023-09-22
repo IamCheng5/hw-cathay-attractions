@@ -25,7 +25,11 @@ class AttractionDetailFragment : Fragment() {
                     onBackClick = {
                         findNavController().navigateUp()
                     },
-                    onUrlClick = {println(it)}
+                    onUrlClick = {
+                        findNavController().navigate(
+                            AttractionDetailFragmentDirections.actionAttractionDetailFragmentToAttractionWebViewFragment(it)
+                        )
+                    }
                 )
             }
         }
